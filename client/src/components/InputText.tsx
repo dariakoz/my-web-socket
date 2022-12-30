@@ -1,31 +1,35 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import ChatServices from "../socket/ChatService";
+import { IMessage } from "../types/chat";
 
 export default function InputText()
 {
-	const [message, setMessage] = useState('')
+	const [message, setMessage] = useState('');
 
-	function addAMessage(message: string)
+	function addMessage(e: React.MouseEvent)
 	{
-		console.log(message)
+		e.preventDefault();
+		ChatServices.sendMessage(message, "Vinzenz");
+		setMessage("");
 	}
+	
 
 	return (
-		<form id="form" action="">
+		<form className="form" action="">
 			<input 
-			id="input" 
-			autoComplete="off" 
+			className="input" 
+			autoComplete="off"
+			value={message} 
 			placeholder="Sende eine Nachricht"
 			onChange= {(e) => {
 				setMessage(e.target.value);
-				console.log(message);
 			}}
 			/>
+
 			<button
-			onClick={(event) => {
-				event.preventDefault();
-				addAMessage(message);
-			}}
+			onClick={(e) => addMessage(e)}
 			>Senden</button>
+
 		</form>
 	)
 }

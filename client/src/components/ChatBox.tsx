@@ -1,25 +1,9 @@
 import React from "react";
+import { IMessage } from "../types/chat";
 
-export interface message {
-	user?: string;
-	message: string;
-}
-
-
-export function ChatBox({user, message}: message)
+export function ChatBox({author, content}: IMessage)
 {
 	return (
-		<ul id="messages">
-			<li>{message}</li>
-		</ul>
+		<li>{author}: {content}</li>		
 	)
 }
-
-
-
-// export function ChatBoxSender()
-// {
-// 	return (
-// 		<div>ChatBox</div>
-// 	)
-// }

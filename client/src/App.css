@@ -1,5 +1,5 @@
 .form {
-  background: rgba(0, 0, 0, 0.15);
+  background: #252525;
   padding: 0.25rem;
   position: fixed;
   bottom: 0;
@@ -21,23 +21,25 @@
   outline: none;
 }
 .form > button {
-  background: #333;
+  background: #FFFCF5;
   border: none;
   padding: 0 1rem;
   margin: 0.25rem;
   border-radius: 3px;
   outline: none;
-  color: #fff;
+  color: #095577;
 }
 
 .messages {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  color: #fffcf5;
 }
 .messages > li {
   padding: 0.5rem 1rem;
 }
 .messages > li:nth-child(odd) {
-  background: #efefef;
+  background: #FFB875;
+  color: #252525;
 }

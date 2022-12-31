@@ -3,14 +3,16 @@ import { IMessage } from "../types/chat";
 
 class ChatService {
     
-    private host = "localhost:3002";
+    private host = "https://dariakoz.com";
     private ws: Socket;
     private data: IMessage | undefined;
     
     constructor()
     {
         //connect to the Server
-        this.ws = socketIOClient(this.host);
+        this.ws = socketIOClient(this.host, {
+            path: "/app2/"
+          });
 
         //event listener for new messages
         this.ws.on("new message", (data: IMessage) => {

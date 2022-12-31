@@ -5,7 +5,7 @@ import { IMessage } from "./types/socket";
 import cors from "cors";
 
 //Initializing the Webserver using the express and http
-const port: number = 3002;
+const port: number = 3000;
 const app = express();
 app.use(cors);
 const server = http.createServer(app);

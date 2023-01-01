@@ -11,7 +11,7 @@ class ChatService {
     {
         //connect to the Server
         this.ws = socketIOClient(this.host, {
-            path: "/app2/"
+            path: "/api/socket.io/"
           });
 
         //event listener for new messages

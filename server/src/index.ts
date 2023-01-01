@@ -4,21 +4,21 @@ import { Server } from "socket.io";
 import { IMessage } from "./types/socket";
 import cors from "cors";
 
-//Initializing the Webserver using the express and http
+// Initializing the Webserver using the express and http
 const port: number = 3000;
 const app = express();
 app.use(cors);
 const server = http.createServer(app);
 
-//Initializing the WebSocket using "socket.io";
+// Initializing the WebSocket using "socket.io";
 const io = new Server(server, {
-	cors: { //needed because Frontend and Backend have differnt ports
+	cors: { // needed because Frontend and Backend have differnt ports
 		origin: "*", // connect from everywhere
 		methods: ["GET", "POST"]
 	}
 });
 
-//Eventlistener for the WebSocket on Server-Side
+// Eventlistener for the WebSocket on Server-Side
 io.on("connection", (socket) => {
 	console.log("user is connected");
 
